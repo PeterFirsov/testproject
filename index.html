@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Московский комсомолец</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  </head>
+  <body>
+    <main class="page-main">
+      <a class="registration-button button" href="#">Регистрация</a>
+    </main>
+    <section class="popup registration-form">
+      <h1 class="registration-form__title">Регистрация</h1>
+      <button class="registration-form__close" type="button">Закрыть</button>
+      <form action="https://echo.htmlacademy.ru" method="POST" class="write-us-form" name="registr">
+        <fieldset class="registration-form__field">
+          <label class="registration-form__label" for="your-mail">E-mail</label>
+          <input class="registration-form__pole" autofocus type="email" name="mail" id="your-mail" required>
+        </fieldset>
+        <fieldset class="registration-form__field">
+          <label class="registration-form__label" for="your-name">Никнейм</label>
+          <input class="registration-form__pole" type="text" name="nic" id="your-name" pattern="[A-Za-z]+[0-9a-zA-Z;_]{3,40}" required>
+        </fieldset>
+        <fieldset class="registration-form__field">
+          <label class="registration-form__label" for="parole">Пароль</label>
+          <input class="registration-form__pole" type="password" name="password" id="parole" pattern="(?=^.{6,32}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*" required>
+        </fieldset>
+        <p class="registration-form__check-name">Пароль должен содержать:</p>
+        <ul class="registration-form__check">
+          <li class="registration-form__check-simbol"><span class="registration-form__sign"></span>от 6 до 32 символов</li>
+          <li class="registration-form__check-number"><span class="registration-form__sign"></span>цифру</li>
+          <li class="registration-form__check-letter"><span class="registration-form__sign"></span>заглавную и строчную буквы</li>
+        </ul>
+        <p class="registration-form__check-nic">Пароль не должен совпадать с Никнеймом и E-mail</p>
+        <fieldset class="registration-form__field">
+          <label class="registration-form__label" for="repeat">Пароль ещё раз</label>
+          <input class="registration-form__pole" type="password" name="repeat" id="repeat" pattern="(?=^.{6,32}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*" required>
+        </fieldset>
+        <p class="registration-form__check-fail">Введённые пароли не совпадают</p>
+        <fieldset class="registration-form__field">
+          <label for="low-check" class="registration-form__checkbox-text">
+            <input class="registration-form__checkbox visually-hidden" type="checkbox" name="low-check" id="low-check" required>
+            <span class="registration-form__checkbox-indicator">
+            </span>Я принимаю условия <a class="registration-form__checkbox-link" href="#">Пользовательского соглашения</a>
+          </label>
+        </fieldset>
+        <button class="registration-form__button button registration-form__button--mod" type="submit" disabled>Зарегистрироваться</button>
+      </form>
+    </section>
+    <script src="script/script.js"></script>
+  </body>
+</html>
